@@ -1,0 +1,67 @@
+<resources>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+    </style>
+
+    <style name="TvDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/tranparent_selector</item>
+    </style>
+
+    <!-- 字体 -->
+    <style name="TextAppearance">
+        <item name="android:textColorHighlight">@color/text_color_highlight</item>
+        <item name="android:textColorLink">@color/text_color_link</item>
+        <item name="android:shadowColor">@color/text_color_shadow</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+
+    <style name="TextAppearance.Primary"><!-- 需要反色 -->
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/text_font_size_huge</item>
+    </style>
+    <style name="Menu_Activity">
+        <item name="android:textColor">@color/menu_activity</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">@color/menu_activity</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">16</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+    <style name="Menu_default">
+        <item name="android:textColor">@color/menu_default</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">@color/menu_default</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">16</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+    <style name="SubMenu_Activity">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">@color/menu_activity</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">16</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+
+    <style name="TextAppearance_tablayout" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize" >25sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+
+    </style>
+</resources>
