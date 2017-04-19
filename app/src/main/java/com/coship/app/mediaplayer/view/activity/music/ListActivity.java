@@ -2,7 +2,11 @@ package com.coship.app.mediaplayer.view.activity.music;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -38,7 +42,6 @@ public class ListActivity extends AppCompatActivity implements IListView {
 
     private IListPresenter presenter;
 
-
     private List<String> title = new ArrayList<>();
     private List<Fragment> pageList = new ArrayList<>();
 
@@ -47,6 +50,7 @@ public class ListActivity extends AppCompatActivity implements IListView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.music_list_activity);
         presenter = new ListPresenterImpl(this);
+        getContentResolver().registerContentObserver(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,true,);
         initTablayout();
     }
 
@@ -74,23 +78,7 @@ public class ListActivity extends AppCompatActivity implements IListView {
 
     @Override
     public void showAllSong(Adapter adapter) {
-        if (songs.size() <= 0) {
-            pageList.add(new Fragment());
-            Toast.makeText(this, "未找到歌曲", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
-        List<Map<String, Object>> data = new ArrayList<>();
-        ListFragment allSongFragment = ListFragment.newInstance(R.layout.music_list_allsong_item,
-                new String[]{"name"}, new int[]{R.id.item_song_name}, ListFragment.WHOIS_ALLSONG);
-        for (Song item : songs) {
-            Map<String, Object> map = new HashMap<>();
-            map.put("name", item.getName());
-            map.put("folder", item.getFolder());
-            data.add(map);
-        }
-        allSongFragment.setListData(data);
-        pageList.add(allSongFragment);
     }
 
 
@@ -138,6 +126,16 @@ public class ListActivity extends AppCompatActivity implements IListView {
         return presenter;
     }
 
+    private final class AudioObserver extends ContentObserver{
+        public AudioObserver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            presenter.update();
+        }
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

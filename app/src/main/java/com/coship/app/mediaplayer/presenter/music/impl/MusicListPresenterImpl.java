@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.coship.app.mediaplayer.R;
 import com.coship.app.mediaplayer.bean.music.Song;
+import com.coship.app.mediaplayer.presenter.music.interfaces.IListPresenter;
 import com.coship.app.mediaplayer.view.adapter.SongAdapter;
 import com.coship.app.mediaplayer.view.interfaces.music.IListView;
 
@@ -111,6 +112,10 @@ public class MusicListPresenterImpl {
                 SongAdapter.NOCONTROL}
                 , mSongs);
         mView.showAllSong(songAdapter);
+    }
+
+    public void update(){
+        queryAllSong();
     }
 
     public void destory() {
