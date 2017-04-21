@@ -14,7 +14,8 @@ import java.util.Map;
 
 public interface IListView {
     Context getContext();
-    void showAllSong(Adapter adapter);
-    void showField(Map<String, Integer> albumMap,String field);
+    void showAllSong(List<Song> songs);
+
+    void showField(Map<String, Integer> albumMap, String field);
     void showPlayer(int position);
 }

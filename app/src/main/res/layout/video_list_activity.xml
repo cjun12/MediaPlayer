@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ListView
+        android:id="@+id/lv_video_list"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+    </ListView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_video_list"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:layout_weight="3">
+    </android.support.v7.widget.RecyclerView>
+    <!--<GridView-->
+        <!--android:id="@+id/gv_photo_list"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="3"-->
+        <!--android:verticalSpacing="1pt"-->
+        <!--android:horizontalSpacing="1pt"-->
+        <!--android:numColumns="4">-->
+
+    <!--</GridView>-->
+</LinearLayout>

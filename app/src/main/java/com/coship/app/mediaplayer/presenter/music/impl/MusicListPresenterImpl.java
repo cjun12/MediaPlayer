@@ -110,7 +110,7 @@ public class MusicListPresenterImpl {
                 SongAdapter.NOCONTROL,
                 SongAdapter.NOCONTROL}
                 , mSongs);
-        mView.showAllSong(songAdapter);
+//        mView.showAllSong(songAdapter);
     }
 
     public void destory() {

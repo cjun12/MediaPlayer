@@ -47,8 +47,9 @@ public class ListPresenterImpl implements IListPresenter {
             song.setSinger(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST)));
             song.setAlbum(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM)));
             song.setPath(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA)));
-            int albumId = cursor.getInt(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID));
+            song.setAlbumId(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID)));
             songs.add(song);
+            Log.i(TAG, "loadAllMusic: " + song.getPath());
         }
         cursor.close();
         curList = songs;

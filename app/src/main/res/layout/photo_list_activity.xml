@@ -16,6 +16,17 @@
         android:id="@+id/rv_photo_list"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:focusable="true"
         android:layout_weight="3">
     </android.support.v7.widget.RecyclerView>
+    <!--<GridView-->
+        <!--android:id="@+id/gv_photo_list"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="3"-->
+        <!--android:verticalSpacing="1pt"-->
+        <!--android:horizontalSpacing="1pt"-->
+        <!--android:numColumns="4">-->
+
+    <!--</GridView>-->
 </LinearLayout>

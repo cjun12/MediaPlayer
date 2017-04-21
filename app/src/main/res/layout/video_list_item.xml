@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dip"
+    android:layout_height="280dip"
+    android:background="@drawable/photo_selector"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="240dip"
+        android:layout_height="270dip"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <com.coship.app.mediaplayer.control.ImageRecycleView
+            android:id="@+id/item_field_image"
+            android:layout_width="240dip"
+            android:layout_height="240dip"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"></com.coship.app.mediaplayer.control.ImageRecycleView>
+
+        <TextView
+            android:id="@+id/item_field_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20dip" />
+    </LinearLayout>
+</RelativeLayout>

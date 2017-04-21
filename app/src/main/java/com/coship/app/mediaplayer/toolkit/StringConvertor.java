@@ -1,4 +1,4 @@
-package com.coship.app.mediaplayer.Toolkit;
+package com.coship.app.mediaplayer.toolkit;
 
 import java.lang.reflect.InvocationTargetException;
 import java.text.SimpleDateFormat;

@@ -19,16 +19,28 @@
         <activity android:name=".view.activity.music.ListActivity"></activity>
         <activity android:name=".view.activity.music.PlayActivity"></activity>
         <activity android:name=".view.activity.photo.ListActivity"></activity>
+        <activity android:name=".view.activity.photo.ShowActivity"></activity>
+        <activity android:name=".view.activity.video.ListActivity"></activity>
+        <activity android:name=".view.activity.video.PlayActivity"></activity>
         <activity android:name=".view.activity.HomeActivity"></activity>
         <service android:name="com.coship.app.mediaplayer.service.PlayerService"></service>
-        <!--<receiver android:name=".receiver.MediaReceiver" android:exported="true">-->
-            <!--<intent-filter android:priority="2000">-->
-                <!--<action android:name="android.intent.action.MEDIA_MOUNTED"></action>-->
-                <!--<action android:name="android.intent.action.MEDIA_SCANNER_SCAN_FILE"></action>-->
-                <!--<action android:name="android.intent.action.ACTION_MEDIA_MOUNTED"></action>-->
-                <!--<action android:name="android.intent.action.MEDIA_UNMOUNTED"></action>-->
-            <!--</intent-filter>-->
-        <!--</receiver>-->
+        <receiver android:name=".receiver.MediaReceiver" android:exported="true" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_EJECT"></action>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"></action>
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED"></action>
+                <data android:scheme="file"></data>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_REMOVED"></action>
+                <data android:scheme="file"></data>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_SCANNER_FINISHED"></action>
+                <action android:name="android.intent.action.MEDIA_SCANNER_SCAN_FILE"></action>
+                <data android:scheme="file"></data>
+            </intent-filter>
+        </receiver>
     </application>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>

@@ -8,10 +8,10 @@ import java.util.Map;
  */
 
 public interface IListPresenter{
-    List<Map<String, String>> loadAllPhotoList();
     void loadFolderList();
-    void loadfileList(String path);
     void loadAllPhoto();
 
     void loadPhoto(int position);
+
+    void destroy();
 }

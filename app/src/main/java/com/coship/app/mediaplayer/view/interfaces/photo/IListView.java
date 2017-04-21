@@ -12,7 +12,9 @@ import com.coship.app.mediaplayer.view.adapter.PhotoListAdapter;
 
 public interface IListView {
     Context getContext();
-    void showAllPhotoList();
+
+//    void showPhoto(SimpleAdapter adapter);
+
     void showFolderList(SimpleAdapter adapter);
     void showPhoto(PhotoListAdapter photoAdapter);
 }

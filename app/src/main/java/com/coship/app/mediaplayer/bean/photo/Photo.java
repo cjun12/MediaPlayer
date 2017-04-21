@@ -13,8 +13,8 @@ public class Photo {
      */
 
     private String id;
-    private String folder;
-    private String fileName;
+    private String path;
+    private String thumbPath;
 
     public String getId() {
         return id;
@@ -24,28 +24,36 @@ public class Photo {
         this.id = id;
     }
 
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public String getThumbPath() {
+        return thumbPath;
+    }
+
+    public void setThumbPath(String thumbPath) {
+        this.thumbPath = thumbPath;
+    }
+
     public String getFolder() {
+        String folder=null;
+        if(path!=null){
+            folder = path.substring(0,path.lastIndexOf("/"));
+        }
         return folder;
     }
-
-    public void setFolder(String folder) {
-        this.folder = folder;
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
     @Override
     public String toString() {
         return "Photo{" +
                 "id='" + id + '\'' +
-                ", folder='" + folder + '\'' +
-                ", fileName='" + fileName + '\'' +
+                ", path='" + path + '\'' +
+                ", thumbPath='" + thumbPath + '\'' +
                 '}';
     }
+
 }

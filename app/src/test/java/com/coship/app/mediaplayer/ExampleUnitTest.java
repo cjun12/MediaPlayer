@@ -1,24 +1,8 @@
 package com.coship.app.mediaplayer;
 
-import android.net.Uri;
-import android.os.Environment;
-import android.util.Log;
-
-import com.coship.app.mediaplayer.Toolkit.StringConvertor;
-import com.coship.app.mediaplayer.bean.music.Song;
-
 import org.junit.Test;
 
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static android.R.id.list;
-import static android.content.ContentValues.TAG;
-import static org.junit.Assert.*;
 
 /**
  * Example local unit test, which will execute on the development machine (host).

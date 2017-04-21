@@ -14,10 +14,27 @@ public class Song implements Serializable {
     private String name;
     private String singer;
     private String album;
+    private String albumId;
     private String path;
     private String albumPath;
 
+    public String getAlbumId() {
+        return albumId;
+    }
 
+    public void setAlbumId(String albumId) {
+        this.albumId = albumId;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    private String fileName;
     public String getName() {
         return name;
     }

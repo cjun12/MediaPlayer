@@ -1,6 +1,9 @@
 package com.coship.app.mediaplayer.view.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +19,8 @@ import com.coship.app.mediaplayer.view.activity.music.PlayActivity;
 
 import java.io.File;
 
+import static android.content.Intent.ACTION_MEDIA_MOUNTED;
+
 
 /**
  * Created by 980558 on 2017/4/7.
@@ -29,8 +34,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.test);
         findViewById(R.id.Home).setOnClickListener(this);
         findViewById(R.id.music_list).setOnClickListener(this);
-        findViewById(R.id.music_play).setOnClickListener(this);
         findViewById(R.id.photo_list).setOnClickListener(this);
+        findViewById(R.id.video_list).setOnClickListener(this);
 //        String[] paths = new String[]{Environment.getExternalStorageDirectory().getAbsolutePath()};
 //        MediaScannerConnection.scanFile(this, paths, null,new MediaScannerConnection.OnScanCompletedListener(){
 //            @Override
@@ -40,7 +45,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 //            }
 //        });
     }
-
     void listFile(String path){
         Log.i(TAG, "listFile: "+path);
         File file = new File(path);
@@ -63,31 +67,15 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 intent =  new Intent(TestActivity.this,ListActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.music_play:
-                 intent  =  new Intent(TestActivity.this,PlayActivity.class);
-                startActivity(intent);
-                break;
             case R.id.photo_list:
                 intent  =  new Intent(TestActivity.this, com.coship.app.mediaplayer.view.activity.photo.ListActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.photo_play:
-                intent  =  new Intent(TestActivity.this,HomeActivity.class);
+            case R.id.video_list:
+                intent  =  new Intent(TestActivity.this, com.coship.app.mediaplayer.view.activity.video.ListActivity.class);
                 startActivity(intent);
                 break;
             case R.id.file_list:
-                intent  =  new Intent(TestActivity.this,HomeActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.file_play:
-                intent  =  new Intent(TestActivity.this,HomeActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.video_list:
-                intent  =  new Intent(TestActivity.this,HomeActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.video_play:
                 intent  =  new Intent(TestActivity.this,HomeActivity.class);
                 startActivity(intent);
                 break;

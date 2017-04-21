@@ -1,4 +1,4 @@
-package com.coship.app.mediaplayer.Toolkit;
+package com.coship.app.mediaplayer.toolkit;
 
 import android.content.Context;
 import android.database.Cursor;

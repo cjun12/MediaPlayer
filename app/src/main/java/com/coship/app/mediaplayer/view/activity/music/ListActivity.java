@@ -73,7 +73,7 @@ public class ListActivity extends AppCompatActivity implements IListView {
     }
 
     @Override
-    public void showAllSong(Adapter adapter) {
+    public void showAllSong(List<Song> songs) {
         if (songs.size() <= 0) {
             pageList.add(new Fragment());
             Toast.makeText(this, "未找到歌曲", Toast.LENGTH_SHORT).show();

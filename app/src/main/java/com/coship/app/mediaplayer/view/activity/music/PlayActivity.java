@@ -27,20 +27,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.coship.app.mediaplayer.R;
-import com.coship.app.mediaplayer.Toolkit.StringConvertor;
+import com.coship.app.mediaplayer.toolkit.StringConvertor;
 import com.coship.app.mediaplayer.bean.music.Song;
 import com.coship.app.mediaplayer.control.FocusLayout;
 import com.coship.app.mediaplayer.control.LyricView;
 import com.coship.app.mediaplayer.service.PlayerService;
 
 import java.util.List;
-import java.util.Timer;
 
 /**
  * Created by 980558 on 2017/4/5.
